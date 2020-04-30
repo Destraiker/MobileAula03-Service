@@ -16,6 +16,10 @@ export class PessoasComponent implements OnInit {
   AlterarPessoa(novaPessoa){
     
   }
+  
+  MostrarDetalhes(){
+
+  }
 
   constructor(private eventosService: PessoasService) { }
 

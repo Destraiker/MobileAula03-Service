@@ -1,33 +1,30 @@
-<div>
-    <div>
-        <table style="width:50%">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Detalhe</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{pessoa.id}}</td>
-                    <td>{{pessoa.name}}</td>
-                    <td>{{pessoa.email}}</td>
-                    <td>Detalhes</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div >
-        <div style="width:50%">
-            <app-pessoas-detalhe (novaPessoa)="AlterarPessoa($event)"></app-pessoas-detalhe>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <table style="width:100%" class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Detalhe</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let pessoa of pessoasArray">
+                    <tr>
+
+                        <td>{{pessoa.id}}</td>
+                        <td>{{pessoa.name}}</td>
+                        <td>{{pessoa.email}}</td>
+                        <td><button (click)="MostrarDetalhes()" id="{{pessoa.id}}">Detalhes</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <div style="width:50%">
+                <app-pessoas-detalhe (novaPessoa)="AlterarPessoa($event)"></app-pessoas-detalhe>
+            </div>
         </div>
     </div>
 </div>
-<!-- 
-    <div *ngFor="let pessoa of pessoasArray">
-        {{pessoa.name}}
-    </div>
--->
-{{pessoasArray}}
