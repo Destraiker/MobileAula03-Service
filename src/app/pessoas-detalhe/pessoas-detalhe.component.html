@@ -1,1 +1,20 @@
-<p>pessoas-detalhe works!</p>
+<ul class="list-group" style="display: block;" id="detalhesForm">
+    <li class="list-group-item active">Detalhes: </li>
+    <li class="list-group-item">ID: {{pessoa.id}}</li>
+    <li class="list-group-item">NOME: {{pessoa.name}}</li>
+    <li class="list-group-item">IDADE: {{pessoa.idade}}</li>
+    <li class="list-group-item">COR DOS OLHOS: {{pessoa.corOlhos}}</li>
+    <li class="list-group-item">SEXO: {{pessoa.sexo}}</li>
+    <li class="list-group-item">E-MAIL: {{pessoa.email}}</li>
+    <li class="list-group-item active botao"  (click)="AbrirNovoForm()">Atualizar dados</li>
+  </ul> 
+
+  <ul class="list-group" style="display: none;" id="atulizarForm">
+    <li class="list-group-item active">Nova pessoa: </li>
+    <li class="list-group-item"><input class="form-control" placeholder="NOME" ref-name></li>
+    <li class="list-group-item"><input class="form-control" placeholder="IDADE" ref-idade></li>
+    <li class="list-group-item"><input class="form-control" placeholder="COR DOS OLHOS" ref-corOlhos></li>
+    <li class="list-group-item"><input class="form-control" placeholder="SEXO" ref-sexo></li>
+    <li class="list-group-item"><input class="form-control" placeholder="E-MAIL" ref-email></li>
+    <li class="list-group-item active botao" (click)="ConfirmarAlteracao(name.value,idade.value,corOlhos.value,sexo.value,email.value)">Confirmar</li>
+  </ul> 

@@ -9,21 +9,21 @@
                         <th>E-mail</th>
                         <th>Detalhe</th>
                     </tr>
-                </thead>
+                </thead>         
                 <tbody *ngFor="let pessoa of pessoasArray">
                     <tr>
 
                         <td>{{pessoa.id}}</td>
                         <td>{{pessoa.name}}</td>
                         <td>{{pessoa.email}}</td>
-                        <td><button (click)="MostrarDetalhes()" id="{{pessoa.id}}">Detalhes</button></td>
+                        <td><button class='btn btn-primary' (click)="MostrarDetalhes(pessoa)" id="{{pessoa.id}}">Detalhes</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="col-md-6">
-            <div style="width:50%">
-                <app-pessoas-detalhe (novaPessoa)="AlterarPessoa($event)"></app-pessoas-detalhe>
+            <div style="width:50%" *ngIf="detalhePessoa===true">
+                <app-pessoas-detalhe [pessoa]="pessoa" (novaPessoaEvento)="AlterarPessoa($event)" [display]="display"></app-pessoas-detalhe>
             </div>
         </div>
     </div>

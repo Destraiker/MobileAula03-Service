@@ -59,8 +59,12 @@ export class PessoasService {
     return this.pessoasArray;
   }
 
-  criaEventos() {
-
+  AlterarPessoa(novaPessoa) {
+    this.pessoasArray.forEach(pessoa => {
+      if(pessoa.id==novaPessoa.id){
+        this.pessoasArray[pessoa.id]=novaPessoa;
+      }
+    });
   }
 
   constructor() {

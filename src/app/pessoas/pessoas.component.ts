@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {pessoas} from './pessoas.model';
-import {PessoasService} from '../pessoas.service'
+import { pessoas } from './pessoas.model';
+import { PessoasService } from '../pessoas.service'
 
 @Component({
   selector: 'app-pessoas',
@@ -10,15 +10,18 @@ import {PessoasService} from '../pessoas.service'
 export class PessoasComponent implements OnInit {
 
   pessoasArray: pessoas[] = [];
-  detalhePessoa: boolean=false;
-  pessoa:pessoas;
+  detalhePessoa: boolean = false;
+  pessoa: pessoas;
+  display="block";
 
-  AlterarPessoa(novaPessoa){
-    
+  AlterarPessoa(novaPessoa) {
+    this.eventosService.AlterarPessoa(novaPessoa);
   }
-  
-  MostrarDetalhes(){
 
+  MostrarDetalhes(pessoa) {
+    this.detalhePessoa = true;
+    this.pessoa = pessoa;
+    document.getElementById("detalhesForm").style.display = "block";
   }
 
   constructor(private eventosService: PessoasService) { }
